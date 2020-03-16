@@ -10,7 +10,8 @@ class Project
   end 
   
   def backers 
-    ProjectBacker.all.select{|item| item.project == self}
+    projects_all = ProjectBacker.all.select{|item| item.project == self}
+    projects_all.map{|project| project.backer}
   end 
     
 end 
