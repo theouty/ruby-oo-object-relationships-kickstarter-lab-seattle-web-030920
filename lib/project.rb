@@ -8,5 +8,8 @@ class Project
     ProjectBacker.new(self, backer)
   end 
   
+  def backed_projects 
+    ProjectBacker.all.select{|item| item.project == self}
+  end 
     
 end 
